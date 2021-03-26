@@ -25,7 +25,9 @@ java -jar prometheus-web.jar --spring.profiles.active=prod --server.port=8091 --
 --prometheus.rulesPath 设置prometheus的热重启地址
 
 ### 2.docker运行
-docker run -p 8091:8091 -v （prometheus的告警规则存放目录）:/home/rules -v （模板文件目录）:/home/template --name prometheus-web -e "IS_COVER=（是否覆盖）" -e "RELOAD_URL=（prometheus的热重启地址）"  -e "IS_RELOAD=（是否自动热重启）" -d registry.cn-hangzhou.aliyuncs.com/lzqhh/prometheus-web:v1.0
+docker run -p 8091:8091 -v (prometheus的告警规则存放目录):/home/rules -v (模板文件目录):/home/template --name prometheus-web -e "IS_COVER=(是否覆盖)" -e "RELOAD_URL=(prometheus的热重启地址)"  -e "IS_RELOAD=(是否自动热重启)" -d registry.cn-hangzhou.aliyuncs.com/lzqhh/prometheus-web:v1.0
+
+根据自己的需要配置这些参数
 
 ## 使用
 ### 1.添加规则

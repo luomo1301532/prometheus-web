@@ -46,3 +46,6 @@ docker run -p 8091:8091 -v （prometheus的告警规则存放目录）:/home/rul
 ![image](https://user-images.githubusercontent.com/48502494/112596739-2cc71980-8e47-11eb-8342-523f6a1205e0.png)
 
 删除规则时/{idList},支持批量删除，但不建议你这么做，因为它不具备事件回滚功能。
+
+## 感谢支持
+如果你觉得prometheus解决了你的问题，请给一个星，感谢您的支持。当星到1k时，我将开源源码。有任何问题请给我留言。

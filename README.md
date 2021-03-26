@@ -1,0 +1,2 @@
+# promethues-web
+promethues-web是一个将promethues的配置文件可以进行api配置的插件，它遵循Resful风格。带给你全新的体验

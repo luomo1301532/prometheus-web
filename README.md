@@ -20,8 +20,27 @@ java -jar prometheus-web.jar --spring.profiles.active=prod --server.port=8091 --
 
 --prometheus.isCover 设置是否覆盖（默认false）
 
---prometheus.isReload 设置是否覆盖（默认true）
+--prometheus.isReload 设置是否自动热重启（默认true）
 
 --prometheus.rulesPath 设置prometheus的热重启地址
 
 ### 2.docker运行
+## 使用
+1.添加规则
+
+![image](https://user-images.githubusercontent.com/48502494/112595173-ff796c00-8e44-11eb-84b6-531d91c2a1bf.png)
+![image](https://user-images.githubusercontent.com/48502494/112595353-45cecb00-8e45-11eb-8e16-12efddcbb800.png)
+
+添加规则时，必要传参id和templateName，id是你在规则中的唯一标识，templateName是你的模板文件名，如上图，其它字段与你的模板内容一一对应即可生成相应规则，模板的功能强大，像上图它可以根据list生成多条规则，你可以自由的定制。（模板文件需要放在你设置的模板文件目录内）（注意如果你没有开启覆盖，当id相同时会提示id冲突错误，当开启覆盖后，id相同，会覆盖之前配置的规则）（如果你没有开启自动热启动，项目不会自动热启动使规则生效，你需要自己热启动prometheus使之生效）
+
+2.修改规则
+
+![image](https://user-images.githubusercontent.com/48502494/112596323-9e529800-8e46-11eb-8f86-93b561ced6dd.png)
+
+修改规则时，必要传参id和templateName。同添加规则。它会根据id来修改配置规则。
+
+3.删除规则
+
+![image](https://user-images.githubusercontent.com/48502494/112596739-2cc71980-8e47-11eb-8342-523f6a1205e0.png)
+
+删除规则时/{idList},支持批量删除，但不建议你这么做，因为它不具备事件回滚功能。
